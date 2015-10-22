@@ -24,7 +24,7 @@ Function get_tile, longitude, latitude, tile_dir
 	;test if file exists
 	if file_test(file_name) then begin
 		;read in data
-		openr, in_lun, file_name, /swap_endian, get_lun   ;we need to swap the endian here
+		openr, in_lun, file_name, /swap_endian, /get_lun   ;we need to swap the endian here
 		readu, in_lun, tile_data
 		free_lun, in_lun
 	endif
