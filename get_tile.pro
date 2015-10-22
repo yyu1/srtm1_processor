@@ -2,7 +2,7 @@
 ;If tile file does not exist, return an array of 0
 ;argument passed in is the lower left corner of the tile in integer degrees
 
-Function get_tile, longitude, latitude
+Function get_tile, longitude, latitude, tile_dir
 
 	if (longitude lt -180) or (longitude gt 179) or (latitude lt -90) or (latitude gt 89) then message, 'Longitude Latitude out of bounds.', longitude, latitude
 
@@ -10,7 +10,7 @@ Function get_tile, longitude, latitude
 	latitude = fix(latitude)
 
 	;Setting
-	tile_dir = '/nobackupp6/nexprojects/CMS-ALOS/srtm'
+	;tile_dir = '/nobackupp6/nexprojects/CMS-ALOS/srtm'
 
 
 	file_name = ''
