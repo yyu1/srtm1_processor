@@ -6,16 +6,16 @@ Function get_tile, longitude, latitude, tile_dir
 
 	if (longitude lt -180) or (longitude gt 179) or (latitude lt -90) or (latitude gt 89) then message, 'Longitude Latitude out of bounds.', longitude, latitude
 
-	longitude = fix(longitude)
-	latitude = fix(latitude)
+	loc_longitude = fix(longitude)
+	loc_latitude = fix(latitude)
 
 	;Setting
 	;tile_dir = '/nobackupp6/nexprojects/CMS-ALOS/srtm'
 
 
 	file_name = ''
-	if (latitude ge 0) then file_name += 'N' + strtrim(string(latitude,format='(i02)'),2) else file_name += 'S' + strtrim(string(-latitude,format='(i02)'),2)
-	if (longitude ge 0) then file_name += 'E' + strtrim(string(longitude,format='(i03)'),2) else file_name += 'W' + strtrim(string(-longitude,format='(i03)'),2)
+	if (loc_latitude ge 0) then file_name += 'N' + strtrim(string(loc_latitude,format='(i02)'),2) else file_name += 'S' + strtrim(string(-loc_latitude,format='(i02)'),2)
+	if (loc_longitude ge 0) then file_name += 'E' + strtrim(string(loc_longitude,format='(i03)'),2) else file_name += 'W' + strtrim(string(-loc_longitude,format='(i03)'),2)
 	file_name = tile_dir + '/' + file_name + '.hgt'
 
 
